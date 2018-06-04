@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+
+/* ヘッダー固定 */
+header{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  z-index: 100;
+  margin-top: 15px;
+}
+header h1{
+  font-size: 20px;
+  margin: 0;
+  text-align: center;
+  padding: 4px 0 0 10px;
+}
+/* コメントエリアをインラインスクロールにする */
+ul#commentList {
+  list-style-type: none;
+  margin: 50px 0 100px 0;
+  padding: 0;
+}
+ul#commentList li{
+  margin: 0;
+  padding 4px 5px 4px 10px;
+  border-bottom: 1px dotted #ddd;
+  /*font-size: 14px;*/
+}
+
+body {
+  text-align: center;
+}
+
+#HumuHumuCount{
+  margin-top: 0px;
+  margin-bottom:50px;
+  font-size: 110px;
+  font-family: 'Bungee', cursive;
+  line-height:1;
+  color:#00B0ED;
+}
+.name {
+  margin-top: 100px;
+}
+#HumuHumuVote button {
+  border:none;
+  width: 240px;
+  height:240px;
+  background-color: #00B0ED;
+  border-radius: 300px;
+  box-shadow: 0 15px 0 #007EAA;
+  color: #ffffff;
+  display: block;
+  font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  margin: 20px auto 0 auto;
+  padding: 10px 0;
+  outline:none;
+  transition:all 0.1s ease;
+  position:relative;
+  z-index:2;
+  overflow:hidden
+}
+
+#HumuHumuVote button:disabled {
+  background-color: #ccc;
+  box-shadow: 0 15px 0 #bbb;
+}
+
+#HumuHumuVote button:active {
+  box-shadow: 0 1px 0 #007EAA;
+  transform:translateY(15px);
+}
+
+#HumuHumuVote button::after {
+  display:block;
+  content:"";
+  position:absolute;
+  z-index:-1;
+  top:50%;
+  left:50%;
+  width:0;
+  height:0;
+  border-radius:50%;
+  background:rgba(255,255,255,0.2);
+  transition:all 0.3s ease;
+}
+#HumuHumuVote button:active::after {
+  width:240px;
+  height:240px;
+  margin:-120px 0 0 -120px;
+}
+
+#HumuHumuVote button:disabled:active  {
+  box-shadow: 0 1px 0 #bbb;
+}
+
+
+/* コメントアニメーション */
+
+.comment-enter {
+  opacity:.01;
+    transform:translateY(50%) scale(.95,.95);
+    transition:all 1s ease-out;
+    &#{&}-active {
+      opacity:1;
+      transform:translateY(0) scale(1,1);
+    }
+}
+.comment-leave {
+  opacity:1;
+  transform:translateY(0) scale(1,1);
+  transition:all .2s ease-out;
+  &#{&}-active {
+    opacity:.01;
+    transform:translateY(5%) scale(.98,.98);
+  }
+}
+.comment-appear {
+  opacity:.01;
+    transform:translateY(50%) scale(.95,.95);
+    transition:all 1s ease-out;
+    &#{&}-active {
+      opacity:1;
+      transform:translateY(0) scale(1,1);
+    }
+}
+.comment-appear-active {
+  opacity:1;
+  transform:translateY(0) scale(1,1);
+  transition:all .2s ease-out;
+  &#{&}-active {
+    opacity:.01;
+    transform:translateY(5%) scale(.98,.98);
+  }
+}

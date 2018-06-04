@@ -1,0 +1,12 @@
+.comment-enter {
+     -webkit-transition: 1s ease-in;
+}
+.comment-enter.comment-enter-active {
+    font-size: 12px;
+}
+.comment-leave {
+    -webkit-transition: .5s ease-out;
+}
+.comment-leave.comment-leave-active {
+    font-size: 30px;
+}
